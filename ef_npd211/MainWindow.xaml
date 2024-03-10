@@ -1,0 +1,20 @@
+﻿<Window x:Class="ef_npd211.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ef_npd211"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="Button_Click">Load Categories</Button>
+            <Button Click="Button_Click_1">Load Products</Button>
+            <Button Click="Button_Click_3">Load Orders</Button>
+            <Button Click="Button_Click_2">Make Order</Button>
+        </ToolBar>
+        <DataGrid Name="table">
+            
+        </DataGrid>
+    </DockPanel>
+</Window>
