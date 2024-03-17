@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +41,9 @@ namespace ef_npd211
                 new Category() { Id = 5, Name = "Sport" },
                 new Category() { Id = 6, Name = "Fashion" }
             });
+
+            // Fluent API
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         // collections (tables)
@@ -53,10 +57,10 @@ namespace ef_npd211
     {
         // Primary Key: Id/ID/id ProductId
         public int Id { get; set; }
-        [MaxLength(200)]
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int? Quantity { get; set; }
+        public int CategoryId { get; set; }
 
         // navigation properties
         public Category Category { get; set; }
