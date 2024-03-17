@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ef_npd211.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ef_npd211.Configurations
+namespace ef_npd211.Data.Configurations
 {
     internal class ProductEntityConfigs : IEntityTypeConfiguration<Product>
     {
@@ -17,6 +18,8 @@ namespace ef_npd211.Configurations
             builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
 
             builder.Property(x => x.Quantity).IsRequired(false);
+
+            builder.Property(x => x.Discount).HasDefaultValue(0);
 
             // configure relationships
             // 1 - many

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ef_npd211.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ef_npd211
+namespace ef_npd211.Data
 {
     public class ShopDbContext : DbContext
     {
-        public ShopDbContext() : base() 
+        public ShopDbContext() : base()
         {
             //Database.EnsureDeleted();
             //Database.EnsureCreated();
@@ -50,37 +51,5 @@ namespace ef_npd211
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
-    }
-
-    // entities
-    public class Product
-    {
-        // Primary Key: Id/ID/id ProductId
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int? Quantity { get; set; }
-        public int CategoryId { get; set; }
-
-        // navigation properties
-        public Category Category { get; set; }
-        public ICollection<Order> Orders { get; set; }
-    }
-
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public ICollection<Product> Products { get; set; }
-    }
-
-    public class Order
-    {
-        public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public decimal TotalPrice { get; set; }
-
-        public ICollection<Product> Products { get; set; }
     }
 }
