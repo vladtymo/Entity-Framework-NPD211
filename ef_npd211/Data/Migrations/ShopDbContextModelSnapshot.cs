@@ -37,7 +37,7 @@ namespace ef_npd211.Migrations
                     b.ToTable("OrderProduct");
                 });
 
-            modelBuilder.Entity("ef_npd211.Category", b =>
+            modelBuilder.Entity("ef_npd211.Data.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace ef_npd211.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ef_npd211.Order", b =>
+            modelBuilder.Entity("ef_npd211.Data.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -105,7 +105,7 @@ namespace ef_npd211.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ef_npd211.Product", b =>
+            modelBuilder.Entity("ef_npd211.Data.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -141,22 +141,22 @@ namespace ef_npd211.Migrations
 
             modelBuilder.Entity("OrderProduct", b =>
                 {
-                    b.HasOne("ef_npd211.Order", null)
+                    b.HasOne("ef_npd211.Data.Entities.Order", null)
                         .WithMany()
                         .HasForeignKey("OrdersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ef_npd211.Product", null)
+                    b.HasOne("ef_npd211.Data.Entities.Product", null)
                         .WithMany()
                         .HasForeignKey("ProductsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ef_npd211.Product", b =>
+            modelBuilder.Entity("ef_npd211.Data.Entities.Product", b =>
                 {
-                    b.HasOne("ef_npd211.Category", "Category")
+                    b.HasOne("ef_npd211.Data.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -165,7 +165,7 @@ namespace ef_npd211.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("ef_npd211.Category", b =>
+            modelBuilder.Entity("ef_npd211.Data.Entities.Category", b =>
                 {
                     b.Navigation("Products");
                 });

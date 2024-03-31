@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,16 +33,8 @@ namespace ef_npd211.Data
             base.OnModelCreating(modelBuilder);
 
             // data initialization
-            // set Id value also
-            modelBuilder.Entity<Category>().HasData(new Category[]
-            {
-                new Category() { Id = 1, Name = "Electronics" },
-                new Category() { Id = 2, Name = "Transport" },
-                new Category() { Id = 3, Name = "Toys" },
-                new Category() { Id = 4, Name = "Food & Drinks" },
-                new Category() { Id = 5, Name = "Sport" },
-                new Category() { Id = 6, Name = "Fashion" }
-            });
+            //DbSeedExtensions.Seed(modelBuilder);
+            modelBuilder.Seed();
 
             // Fluent API
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

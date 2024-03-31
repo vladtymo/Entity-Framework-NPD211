@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ef_npd211.Data;
+using ef_npd211.Data.Entities;
 
 namespace ef_npd211
 {
