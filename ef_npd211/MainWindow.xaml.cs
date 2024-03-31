@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ef_npd211.Data;
 using ef_npd211.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ef_npd211
 {
@@ -31,7 +32,8 @@ namespace ef_npd211
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            table.ItemsSource = context.Products.ToList();
+            // .Include() - Products LEFT JOIN Categories
+            table.ItemsSource = context.Products.Include(x => x.Category).ToList();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

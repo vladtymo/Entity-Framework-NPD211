@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ef_npd211", "ef_npd211\ef_npd211.csproj", "{7D8AC4E8-9522-4CA6-B95D-2B87C6D9B305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ef_npd211", "ef_npd211\ef_npd211.csproj", "{7D8AC4E8-9522-4CA6-B95D-2B87C6D9B305}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{DD1E1E79-0EEB-486B-9369-2D1DD2B5AE12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7D8AC4E8-9522-4CA6-B95D-2B87C6D9B305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8AC4E8-9522-4CA6-B95D-2B87C6D9B305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8AC4E8-9522-4CA6-B95D-2B87C6D9B305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1E1E79-0EEB-486B-9369-2D1DD2B5AE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1E1E79-0EEB-486B-9369-2D1DD2B5AE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1E1E79-0EEB-486B-9369-2D1DD2B5AE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1E1E79-0EEB-486B-9369-2D1DD2B5AE12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
